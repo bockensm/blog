@@ -2,7 +2,9 @@
 @import 'syntax';
 @import 'variables';
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -11,12 +13,12 @@ html {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  color: $body-color;
   background-color: #f0f0f0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
+  color: $body-color;
+  font-family: 'Lato', sans-serif;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 
 h1 {
@@ -24,83 +26,90 @@ h1 {
 }
 
 img {
+  display: inline-block;
   max-width: 100%;
   vertical-align: middle;
-  display: inline-block;
 }
 
 img + em {
-  text-align: center;
   display: block;
-  margin-top: 10px;
+  font-size: 14px;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 blockquote {
-  border-left: 5px solid #000;
-  padding-left: 1.1rem;
-  margin-left: 1rem;
-  font-style: italic;
+  border-left: 5px solid #000000;
   color: #ada8a8;
+  font-style: italic;
+  margin-left: 1rem;
+  padding-left: 1.1rem;
 }
 
 pre {
-  padding: 1rem 2rem;
   overflow: auto;
+  padding: 1rem 2rem;
   white-space: pre-wrap;
-  word-wrap: break-word;
   word-break: break-all;
+  word-wrap: break-word;
 
   code {
     border: 0;
-    padding-right: 0;
-    padding-left: 0;
     overflow: auto;
+    padding-left: 0;
+    padding-right: 0;
     white-space: pre-wrap;
-    word-wrap: break-word;
     word-break: break-all;
+    word-wrap: break-word;
   }
 }
 
 table {
-  border: 1px solid #aaa;
-  background-color: #eee;
-  width: 100%;
-  text-align: left;
+  background-color: #eeeeee;
+  border: 1px solid #aaaaaa;
   border-collapse: collapse;
+  text-align: left;
+  width: 100%;
 }
-table td, table.blueTable th {
-  border: 1px solid #aaa;
+
+table td,
+table.blueTable th {
+  border: 1px solid #aaaaaa;
   padding: 3px 2px;
 }
+
 table tbody td {
   font-size: 13px;
 }
+
 table thead {
   background: #a9c4d1;
-  background: linear-gradient(to bottom, #bed3dc 0%, #b1cad5 66%, #A9C4D1 100%);
+  background: linear-gradient(to bottom, #bed3dc 0%, #b1cad5 66%, #a9c4d1 100%);
   border-bottom: 1px solid #8c8c8c;
 }
+
 table thead th {
+  border-left: 1px solid #d0e4f5;
+  color: #ffffff;
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
-  border-left: 1px solid #d0e4f5;
 }
+
 table thead th:first-child {
   border-left: none;
 }
 
 table tfoot {
+  background: #d0e4f5;
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #d0e4f5 100%);
+  border-top: 2px solid #444444;
+  color: #ffffff;
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
-  background: #d0e4f5;
-  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  border-top: 2px solid #444;
 }
+
 table tfoot td {
   font-size: 14px;
 }
@@ -110,8 +119,9 @@ table tfoot td {
   position: relative;
 }
 
-.post, .article-page {
-  background-color: #fff;
+.post,
+.article-page {
+  background-color: #ffffff;
 }
 
 ::-moz-selection {
@@ -124,7 +134,8 @@ table tfoot td {
   color: $white;
 }
 
-.clearfix::before, .clearfix::after {
+.clearfix::before,
+.clearfix::after {
   content: "";
   display: table;
 }
@@ -135,11 +146,11 @@ table tfoot td {
 
 .gist-data table td,
 .gist-data table.blueTable th {
-	border: 0;
+  border: 0;
 }
 
 .gist-data table tr:hover {
-	background-color: #dedede;
+  background-color: #dedede;
 }
 
 /* - - - - - - - - - - Home Page Styles - - - - - - - - - - */

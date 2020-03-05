@@ -41,7 +41,7 @@ gulp.task("browser-sync", () => {
 })
 
 // Compile files
-gulp.task("sass", () => {
+gulp.task("sass-compile", () => {
   return gulp.src("assets/css/scss/main.scss")
     .pipe(sass({
       outputStyle: "expanded",
@@ -55,24 +55,44 @@ gulp.task("sass", () => {
     .pipe( gulp.dest("assets/css") )
 })
 
+gulp.task("sass-lint", () => {
+  const stylelint = require("gulp-stylelint")
+
+  return gulp.src("assets/css/scss/**/*.scss")
+    .pipe(
+      stylelint({
+        failAfterError: true,
+        reporters: [
+          { formatter: "string", console: true }
+        ]
+      })
+    )
+})
+
+gulp.task("sass", gulp.series("sass-lint", "sass-compile"))
+
 // Compression images
 gulp.task("img", () => {
   return gulp.src("assets/img/**/*")
-    .pipe(cache(imagemin({
-      interlaced: true,
-      progressive: true,
-      svgoPlugins: [{ removeViewBox: false }],
-      use: [pngquant()]
-    })))
+    .pipe(
+      cache(
+        imagemin({
+          interlaced: true,
+          progressive: true,
+          svgoPlugins: [{ removeViewBox: false }],
+          use: [pngquant()]
+        })
+      )
+    )
     .pipe(gulp.dest("_site/assets/img"))
     .pipe(browserSync.reload({ stream: true }))
 })
 
 // Watch scss, html, img files
 gulp.task("watch", () => {
-  gulp.watch("assets/css/scss/**/*.scss", ["sass"])
+  gulp.watch("assets/css/scss/**/*.scss", gulp.task("sass"))
   gulp.watch("assets/js/**/*.js", gulp.series("jekyll-build", "jekyll-rebuild"))
-  gulp.watch("assets/img/**/*", ["img"])
+  gulp.watch("assets/img/**/*", gulp.task("img"))
   gulp.watch(["*.html", "_layouts/*.html", "_includes/*.html", "_pages/*.html", "_posts/*"], gulp.series("jekyll-build", "jekyll-rebuild"))
 })
 
