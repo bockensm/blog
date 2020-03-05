@@ -78,9 +78,6 @@ table td, table.blueTable th {
 table tbody td {
   font-size: 13px;
 }
-table tr:nth-child(even) {
-  background: #adbecc;
-}
 table thead {
   background: #a9c4d1;
   background: linear-gradient(to bottom, #bed3dc 0%, #b1cad5 66%, #A9C4D1 100%);
@@ -134,6 +131,15 @@ table tfoot td {
 
 .clearfix::after {
   clear: both;
+}
+
+.gist-data table td,
+.gist-data table.blueTable th {
+	border: 0;
+}
+
+.gist-data table tr:hover {
+	background-color: #dedede;
 }
 
 /* - - - - - - - - - - Home Page Styles - - - - - - - - - - */
