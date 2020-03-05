@@ -26,6 +26,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
+  - github-pages
+  - jekyll-gist
 
 paginate: 10
 paginate_path: "/page/:num"
