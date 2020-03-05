@@ -10,12 +10,10 @@ site-twitter:
 author: Mark Bockenstedt
 author-img: mark-bockenstedt.jpg
 about-author: Developer by any means necessary; mostly ColdFusion, JavaScript, and Python.
+site-twitter: bockensm
 social-twitter: bockensm
 social-github: bockensm
 social-email:
-
-# Disqus
-discus-identifier:
 
 # Tracker
 analytics: UA-159854083-1
