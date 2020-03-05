@@ -1,4 +1,35 @@
-url: https://bockensm.github.io
 title: Mark Bockenstedt's Blog
+description: >
+  Mark Bockenstedt's blog on ColdFusion, JavaScript, and other things web development related.
+permalink: '/:year/:month/:day/:title'
+baseurl: ""
+url: "https://bockensm.github.io"
+site-twitter:
+
+# Author Settings
 author: Mark Bockenstedt
-theme: jekyll-theme-cayman
+author-img: mark-bockenstedt.jpg
+about-author: Developer by any means necessary; mostly ColdFusion, JavaScript, and Python.
+social-twitter: bockensm
+social-facebook:
+social-github: bockensm
+social-linkedin:
+social-email:
+
+# Disqus
+discus-identifier:
+
+# Tracker
+analytics: UA-159854083-1
+
+# Build Settings
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
+
+paginate: 10
+paginate_path: "/page/:num"
+
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
