@@ -6,6 +6,8 @@
 		{{ content }}
 	</div>
 
+	<script src="{{ "/assets/scripts/theme-switcher.js" | prepend: site.baseurl | relative_url }}"></script>
+
 	{% if jekyll.environment == "production" %}
 		{% include analytics.html %}
 	{% endif %}

@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: $white;
+  background-color: var(--secondary-background-color);
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   text-align: center;
 
   .cover-author-image {
-    background-color: $dark;
+    background-color: var(--dark);
     border-radius: 100%;
     height: 100px;
     margin: 0 auto 10px;
@@ -31,7 +31,7 @@
   }
 
   .author-name {
-    color: $dark;
+    color: var(--dark);
     font-family: 'PT Serif', serif;
     font-size: 16px;
     font-weight: 700;
@@ -41,7 +41,7 @@
     text-transform: uppercase;
 
     &::after {
-      background-color: $body-color;
+      background-color: var(--body-color);
       border-radius: 100%;
       bottom: 0;
       content: "";
@@ -70,7 +70,7 @@
 
 .contact {
   .contact-title {
-    color: $dark;
+    color: var(--dark);
     font-size: 12px;
     font-weight: 400;
     margin: 0 0 5px;
@@ -79,7 +79,7 @@
     text-transform: uppercase;
 
     &::before {
-      background-color: $body-color;
+      background-color: var(--body-color);
       content: "";
       display: block;
       height: 2px;
@@ -91,7 +91,7 @@
     }
 
     &::after {
-      background-color: $body-color;
+      background-color: var(--body-color);
       content: "";
       display: block;
       height: 2px;
@@ -118,14 +118,14 @@
       }
 
       a {
-        color: $body-color;
+        color: var(--body-color);
         display: block;
         font-size: 18px;
         padding: 5px;
         transition: all 350ms cubic-bezier(0.13, 0.43, 0.54, 1.82);
 
         &:hover {
-          color: $dark;
+          color: var(--dark);
           transform: scale(1.2);
         }
       }
@@ -182,9 +182,13 @@ footer {
       margin: 0 0 10px;
 
       a {
-        color: $dark-blue;
+        color: var(--dark-blue);
         font-family: 'PT Serif', serif;
-        text-decoration: none;
+        text-decoration-color: var(--link-text-decoration);
+
+        &:hover {
+          text-decoration-color: var(--link-text-decoration-hover);
+        }
       }
     }
 
@@ -196,7 +200,7 @@ footer {
 
 a.older-posts,
 a.newer-posts {
-  color: $body-color;
+  color: var(--body-color);
   display: inline-block;
   font-size: 18px;
   transition: transform 0.2s;

@@ -1,7 +1,23 @@
-$body-color: #515151;
-$white: #ffffff;
-$lightgray: #fafafa;
-$gray: #ecf0f1;
-$dark-gray: #a0a0a0;
-$dark-blue: #263959;
-$dark: #333030;
+html,
+html[data-theme="light"] {
+  --main-background-color: #f0f0f0;
+  --body-color: #515151;
+  --secondary-background-color: #ffffff;
+  --white: #ffffff;
+  --lightgray: #fafafa;
+  --gray: #ecf0f1;
+  --dark-gray: #a0a0a0;
+  --dark-blue: #263959;
+  --dark: #333030;
+  --link-text-decoration: transparent;
+  --link-text-decoration-hover: #263959;
+}
+
+html[data-theme="dark"] {
+  --main-background-color: #1c1c1e;
+  --body-color: #e5e5ea;
+  --secondary-background-color: #38383c;
+  --dark: #e5e5ea;
+  --dark-blue: #e5e5ea;
+  --link-text-decoration: hsl(0, 0%, 50%);
+}

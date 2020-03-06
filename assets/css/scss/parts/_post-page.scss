@@ -13,7 +13,7 @@
   }
 
   .page-date {
-    color: $dark-gray;
+    color: var(--dark-gray);
     font-size: 12px;
     font-weight: 300;
     text-transform: uppercase;
@@ -21,7 +21,7 @@
 }
 
 .page-cover-image {
-  background-color: $lightgray;
+  background-color: var(--lightgray);
   margin: 0;
   max-height: 500px;
   overflow: hidden;
@@ -52,7 +52,7 @@
 }
 
 .page-footer {
-  border-bottom: 1px solid $dark-gray;
+  border-bottom: 1px solid var(--dark-gray);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -64,9 +64,9 @@
     text-align: left;
 
     a {
-      background-color: $lightgray;
-      border: 1px solid $gray;
-      color: $dark-blue;
+      background-color: var(--lightgray);
+      border: 1px solid var(--gray);
+      color: var(--dark-blue);
       display: inline-block;
       font-size: 12px;
       margin-left: 5px;
@@ -79,15 +79,15 @@
       }
 
       &:hover {
-        background-color: $gray;
+        background-color: var(--gray);
       }
     }
   }
 
   .page-tag {
     a {
-      border: 1px solid $dark-blue;
-      color: $dark-blue;
+      border: 1px solid var(--dark-blue);
+      color: var(--dark-blue);
       font-size: 10px;
       margin-left: 5px;
       padding: 5px 10px;

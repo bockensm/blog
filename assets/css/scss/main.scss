@@ -13,8 +13,8 @@ html {
 }
 
 body {
-  background-color: #f0f0f0;
-  color: $body-color;
+  background-color: var(--main-background-color);
+  color: var(--body-color);
   font-family: "Lato", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +23,16 @@ body {
 
 h1 {
   font-weight: 400;
+}
+
+a {
+  color: var(--dark-blue);
+  text-decoration-color: var(--link-text-decoration);
+
+  &:hover {
+    text-decoration-color: var(--link-text-decoration-hover);
+    transition: text-decoration-color 0.5s;
+  }
 }
 
 img {
@@ -123,17 +133,17 @@ table {
 
 .post,
 .article-page {
-  background-color: #ffffff;
+  background-color: var(--secondary-background-color);
 }
 
 ::-moz-selection {
   background: rgba(38, 57, 89, 0.8);
-  color: $white;
+  color: var(--white);
 }
 
 ::selection {
   background: rgba(38, 57, 89, 0.8);
-  color: $white;
+  color: var(--white);
 }
 
 .clearfix::before,
@@ -153,6 +163,13 @@ table {
 
 .gist-data table tr:hover {
   background-color: #dedede;
+}
+
+body,
+.post,
+.article-page,
+.sidebar {
+  transition: background-color 0.5s;
 }
 
 @import "parts/home-page";
