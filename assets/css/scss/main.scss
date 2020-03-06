@@ -1,6 +1,6 @@
-@import 'normalize';
-@import 'syntax';
-@import 'variables';
+@import "normalize";
+@import "syntax";
+@import "variables";
 
 *,
 *::after,
@@ -15,7 +15,7 @@ html {
 body {
   background-color: #f0f0f0;
   color: $body-color;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -72,46 +72,48 @@ table {
   border-collapse: collapse;
   text-align: left;
   width: 100%;
-}
 
-table td,
-table.blueTable th {
-  border: 1px solid #aaaaaa;
-  padding: 3px 2px;
-}
+  td,
+  &.blueTable th {
+    border: 1px solid #aaaaaa;
+    padding: 3px 2px;
+  }
 
-table tbody td {
-  font-size: 13px;
-}
+  thead {
+    background: #a9c4d1;
+    background: linear-gradient(to bottom, #bed3dc 0%, #b1cad5 66%, #a9c4d1 100%);
+    border-bottom: 1px solid #8c8c8c;
 
-table thead {
-  background: #a9c4d1;
-  background: linear-gradient(to bottom, #bed3dc 0%, #b1cad5 66%, #a9c4d1 100%);
-  border-bottom: 1px solid #8c8c8c;
-}
+    th {
+      border-left: 1px solid #d0e4f5;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
 
-table thead th {
-  border-left: 1px solid #d0e4f5;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-}
+      *:first-child {
+        border-left: none;
+      }
+    }
+  }
 
-table thead th:first-child {
-  border-left: none;
-}
+  tbody {
+    td {
+      font-size: 13px;
+    }
+  }
 
-table tfoot {
-  background: #d0e4f5;
-  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #d0e4f5 100%);
-  border-top: 2px solid #444444;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-}
+  tfoot {
+    background: #d0e4f5;
+    background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #d0e4f5 100%);
+    border-top: 2px solid #444444;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
 
-table tfoot td {
-  font-size: 14px;
+    td {
+      font-size: 14px;
+    }
+  }
 }
 
 .wrapper {
@@ -153,14 +155,7 @@ table tfoot td {
   background-color: #dedede;
 }
 
-/* - - - - - - - - - - Home Page Styles - - - - - - - - - - */
-@import 'parts/home-page';
-
-/* - - - - - - - - - - Post Page Styles - - - - - - - - - - */
-@import 'parts/post-page';
-
-/* - - - - - - - - - - Tag Styles - - - - - - - - - - */
-@import 'parts/tag';
-
-/* - - - - - - - - - - Media Styles - - - - - - - - - - */
-@import 'media';
+@import "parts/home-page";
+@import "parts/post-page";
+@import "parts/tag";
+@import "media";
