@@ -1,9 +1,9 @@
-title: bockensm.github.io
+title: bockensm.com
 description: >
   Mark Bockenstedt's blog on ColdFusion, JavaScript, and other things web development related.
 permalink: '/:year/:month/:day/:title'
 baseurl: ""
-url: "https://bockensm.github.io"
+url: "https://www.bockensm.com"
 site-twitter:
 
 # Author Settings
