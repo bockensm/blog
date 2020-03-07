@@ -26,12 +26,16 @@ h1 {
 }
 
 a {
+  border-bottom-color: var(--dark-blue);
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
   color: var(--dark-blue);
-  text-decoration-color: var(--link-text-decoration);
+  text-decoration: none;
+  transition: border-bottom-style 0.5s;
 
   &:hover {
-    text-decoration-color: var(--link-text-decoration-hover);
-    transition: text-decoration-color 0.5s;
+    border-bottom-style: solid;
+    transition: border-bottom 0.5s;
   }
 }
 
