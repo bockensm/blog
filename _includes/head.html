@@ -3,10 +3,9 @@
 	<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 
 	<script>
-		const theme = localStorage.getItem("theme");
+		const theme = localStorage.getItem("theme")
 		if (theme === "dark") {
-			console.log("going dark now");
-			document.documentElement.setAttribute("data-theme", "dark");
+			document.documentElement.setAttribute("data-theme", "dark")
 		}
 	</script>
 
