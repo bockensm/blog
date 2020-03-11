@@ -160,13 +160,21 @@ table {
   clear: both;
 }
 
-.gist-data table td,
-.gist-data table.blueTable th {
-  border: 0;
+.gist-data {
+  table td,
+  table.blueTable th {
+    border: 0;
+  }
+
+  table tr:hover {
+    background-color: #dedede;
+  }
 }
 
-.gist-data table tr:hover {
-  background-color: #dedede;
+.gist {
+  .blob-code-inner {
+    white-space: break-spaces !important;
+  }
 }
 
 body,
