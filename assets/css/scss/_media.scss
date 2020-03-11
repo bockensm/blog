@@ -35,6 +35,18 @@
     position: relative;
     width: 100%;
 
+    header {
+      margin-bottom: 10px;
+
+      nav {
+        ul {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+        }
+      }
+    }
+
     footer {
       margin-bottom: 10px;
     }
@@ -42,7 +54,6 @@
 
   .about {
     margin: 10px auto auto;
-    max-width: 480px;
     text-align: center;
 
     img {
