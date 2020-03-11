@@ -91,9 +91,9 @@ gulp.task("img", () => {
 // Watch scss, html, img files
 gulp.task("watch", () => {
   gulp.watch("assets/css/scss/**/*.scss", gulp.task("sass"))
-  gulp.watch("assets/js/**/*.js", gulp.series("jekyll-build", "jekyll-rebuild"))
-  gulp.watch("assets/img/**/*", gulp.task("img"))
-  gulp.watch(["*.html", "_layouts/*.html", "_includes/*.html", "_pages/*.html", "_posts/*"], gulp.series("jekyll-build", "jekyll-rebuild"))
+  // gulp.watch("assets/js/**/*.js", gulp.series("jekyll-build", "jekyll-rebuild"))
+  // gulp.watch("assets/img/**/*", gulp.task("img"))
+  // gulp.watch(["*.html", "_layouts/*.html", "_includes/*.html", "_pages/*.html", "_posts/*"], gulp.series("jekyll-build", "jekyll-rebuild"))
 })
 
 //  Default task

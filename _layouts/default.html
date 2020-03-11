@@ -2,8 +2,14 @@
 <html lang="en">
 {% include head.html %}
 <body>
-	<div class="wrapper">
-		{{ content }}
+	<div class="page-container">
+		{% include header.html %}
+
+		<main class="wrapper">
+			{{ content }}
+		</main>
+
+		{% include footer.html %}
 	</div>
 
 	<script src="{{ "/assets/scripts/theme-switcher.js" | prepend: site.baseurl | relative_url }}"></script>
