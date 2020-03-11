@@ -1,10 +1,9 @@
 title: bockensm.com
-description: >
-  Mark Bockenstedt's blog on ColdFusion, JavaScript, and other things web development related.
+description: Mark Bockenstedt's blog on ColdFusion, JavaScript, and other things web development related.
 permalink: '/:year/:month/:day/:title'
 baseurl: ""
 url: "https://www.bockensm.com"
-site-twitter:
+index: true
 
 # Author Settings
 author: Mark Bockenstedt

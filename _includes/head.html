@@ -9,6 +9,8 @@
 		}
 	</script>
 
+	<meta name="robots" content="{% if page.index != false %}index, follow{% else %}noindex, nofollow{% endif %}">
+
 	{% include opengraph.html %}
 
 	{% if page.date %}
