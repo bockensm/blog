@@ -9,6 +9,8 @@ html[data-theme="light"] {
   --dark-gray: #a0a0a0;
   --dark-blue: #0c52c8;
   --dark: #333030;
+  --page-share-background-color: var(--lightgray);
+  --page-share-text-color: var(--dark-blue);
 }
 
 html[data-theme="dark"] {
@@ -18,4 +20,6 @@ html[data-theme="dark"] {
   --dark: #e5e5ea;
   --dark-blue: #e5e5ea;
   --link-text-decoration: hsl(0, 0%, 50%);
+  --lightgray: #1c1c1e;
+  --gray: #515151;
 }
