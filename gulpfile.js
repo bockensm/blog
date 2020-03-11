@@ -3,6 +3,7 @@ const browserSync = require("browser-sync")
 const cache = require("gulp-cache")
 const cleanCSS = require("gulp-clean-css")
 const cp = require("child_process")
+const del = require("del")
 const imagemin = require("gulp-imagemin")
 const pngquant = require("imagemin-pngquant")
 const prefix = require("gulp-autoprefixer")
@@ -40,6 +41,12 @@ gulp.task("browser-sync", () => {
   })
 })
 
+gulp.task("normalize-copy", () => {
+  return gulp.src("node_modules/normalize.css/normalize.css")
+    .pipe( rename("_normalize.scss") )
+    .pipe( gulp.dest("assets/css/scss/") )
+})
+
 // Compile files
 gulp.task("sass-compile", () => {
   return gulp.src("assets/css/scss/main.scss")
@@ -58,7 +65,10 @@ gulp.task("sass-compile", () => {
 gulp.task("sass-lint", () => {
   const stylelint = require("gulp-stylelint")
 
-  return gulp.src("assets/css/scss/**/*.scss")
+  return gulp.src([
+      "assets/css/scss/**/*.scss",
+      "!assets/css/scss/_normalize.scss"
+    ])
     .pipe(
       stylelint({
         failAfterError: true,
@@ -69,7 +79,7 @@ gulp.task("sass-lint", () => {
     )
 })
 
-gulp.task("sass", gulp.series("sass-lint", "sass-compile"))
+gulp.task("styles", gulp.series("sass-lint", "normalize-copy", "sass-compile"))
 
 // Compression images
 gulp.task("img", () => {
@@ -90,11 +100,11 @@ gulp.task("img", () => {
 
 // Watch scss, html, img files
 gulp.task("watch", () => {
-  gulp.watch("assets/css/scss/**/*.scss", gulp.task("sass"))
+  gulp.watch("assets/css/scss/**/*.scss", gulp.task("styles"))
   // gulp.watch("assets/js/**/*.js", gulp.series("jekyll-build", "jekyll-rebuild"))
   // gulp.watch("assets/img/**/*", gulp.task("img"))
   // gulp.watch(["*.html", "_layouts/*.html", "_includes/*.html", "_pages/*.html", "_posts/*"], gulp.series("jekyll-build", "jekyll-rebuild"))
 })
 
 //  Default task
-gulp.task("default", gulp.series("sass", "img", "jekyll-build", "browser-sync", "watch"))
+gulp.task("default", gulp.series("styles", "img", "jekyll-build", "browser-sync", "watch"))

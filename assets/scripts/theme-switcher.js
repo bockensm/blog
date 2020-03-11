@@ -1,14 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+  function setThemeModeText(text) {
+    const themeToggleTriggers = document.querySelectorAll(".theme-toggle")
+    themeToggleTriggers.forEach(trigger => {
+      trigger.textContent = text
+    })
+  }
+
   function switchToDarkMode() {
     document.documentElement.setAttribute("data-theme", "dark")
     window.localStorage.setItem("theme", "dark")
-    document.querySelector("#theme-toggle").textContent = "Light Mode"
+    setThemeModeText("Light Mode")
   }
 
   function switchToLightMode() {
     document.documentElement.setAttribute("data-theme", "light")
     window.localStorage.setItem("theme", "light")
-    document.querySelector("#theme-toggle").textContent = "Dark Mode"
+    setThemeModeText("Dark Mode")
   }
 
   function modeSwitcher() {
@@ -43,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInitialColorMode()
 
-  const themeToggleTrigger = document.querySelector("#theme-toggle")
-  if (themeToggleTrigger) {
-    themeToggleTrigger.addEventListener("click", modeSwitcher)
-  }
+  const themeToggleTriggers = document.querySelectorAll(".theme-toggle")
+  themeToggleTriggers.forEach(trigger => {
+    trigger.addEventListener("click", modeSwitcher)
+  })
 })

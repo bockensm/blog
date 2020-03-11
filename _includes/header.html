@@ -1,3 +1,5 @@
+{% include navigation.html %}
+
 <header>
 	<div class="logo">
 		<a href="/">{{ site.author }}</a>
@@ -7,12 +9,10 @@
 		{% include social.html %}
 	</div>
 
-	<nav>
-		<ul>
-			<li><a href="/about">About</a></li>
-			<li><a href="/uses">Uses</a></li>
-			<li><a href="/suggest-content">Suggest Content</a></li>
-			<li><a href="javascript:void(0);" id="theme-toggle"></a></li>
-		</ul>
-	</nav>
+	<div class="nav-toggle">
+		<ion-icon name="menu-sharp" class="when-menu-closed"></ion-icon>
+		<ion-icon name="close-sharp" class="when-menu-open"></ion-icon>
+	</div>
+
+	{% include navigation.html %}
 </header>

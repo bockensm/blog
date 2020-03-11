@@ -12,7 +12,9 @@
 		{% include footer.html %}
 	</div>
 
+	<script src="{{ "/assets/scripts/nav-menu.js" | prepend: site.baseurl | relative_url }}"></script>
 	<script src="{{ "/assets/scripts/theme-switcher.js" | prepend: site.baseurl | relative_url }}"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 
 	{% if jekyll.environment == "production" %}
 		{% include analytics.html %}
